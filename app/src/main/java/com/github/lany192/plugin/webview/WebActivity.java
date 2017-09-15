@@ -3,10 +3,11 @@ package com.github.lany192.plugin.webview;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-public class WebActivity extends AppCompatActivity {
+import com.qihoo360.replugin.loader.a.PluginFragmentActivity;
+
+public class WebActivity extends PluginFragmentActivity {
     protected final String TAG = "WebActivity";
     private static final String key_url = "key_url";
     private static final String key_title = "key_title";
@@ -14,10 +15,10 @@ public class WebActivity extends AppCompatActivity {
     private String mTitle;
 
     public static void start(Context ctx, String title, String url) {
-        Intent i = new Intent(ctx, WebActivity.class);
-        i.putExtra(key_title, title);
-        i.putExtra(key_url, url);
-        ctx.startActivity(i);
+        Intent intent = new Intent(ctx, WebActivity.class);
+        intent.putExtra(key_title, title);
+        intent.putExtra(key_url, url);
+        ctx.startActivity(intent);
     }
 
     @Override
