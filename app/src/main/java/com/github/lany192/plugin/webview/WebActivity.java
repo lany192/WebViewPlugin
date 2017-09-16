@@ -39,7 +39,7 @@ public class WebActivity extends PluginFragmentActivity {
             Log.e(TAG, "onCreate:请检查传单参数");
             finish();
         }
-        mWebView = (WebView) findViewById(R.id.webview2);
+        mWebView = (WebView) findViewById(R.id.web_view);
         mProgressBar = (ProgressBar) findViewById(R.id.web_progressbar);
         mWebView.setWebChromeClient(new MyWebChromeClient());
         mWebView.setWebViewClient(mWebViewClient);
