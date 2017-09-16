@@ -1,9 +1,11 @@
 # WebViewPlugin
-init
+
+360插件框架RePlugin的通用android WebView插件
 
 #调用方法
 
-    Intent intent = RePlugin.createIntent("com.github.lany192.plugin.webview",          "com.github.lany192.plugin.webview.WebActivity");
+    Intent intent = RePlugin.createIntent("com.github.lany192.plugin.webview", 
+           "com.github.lany192.plugin.webview.WebActivity");
     intent.putExtra("key_url","http://www.baidu.com");
     intent.putExtra("key_title","百度");
     RePlugin.startActivity(context, intent);

@@ -9,9 +9,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import com.qihoo360.replugin.loader.a.PluginFragmentActivity;
+import com.qihoo360.replugin.loader.a.PluginAppCompatActivity;
 
-public class WebActivity extends PluginFragmentActivity {
+public class WebActivity extends PluginAppCompatActivity {
     protected final String TAG = "WebActivity";
     private static final String key_url = "key_url";
     private static final String key_title = "key_title";
