@@ -7,6 +7,6 @@
     <application>
         <activity
             android:name=".WebActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
     </application>
 </manifest>

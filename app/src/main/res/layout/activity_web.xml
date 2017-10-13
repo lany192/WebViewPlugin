@@ -8,14 +8,14 @@
     <RelativeLayout
         android:id="@+id/web_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/actionbar_height"
+        android:layout_height="48dp"
         android:background="@color/toolbar_bg"
         android:gravity="bottom">
 
         <ImageButton
             android:id="@+id/web_toolbar_back_btn"
-            android:layout_width="@dimen/actionbar_height"
-            android:layout_height="@dimen/actionbar_height"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:background="?android:attr/actionBarItemBackground"
             android:contentDescription="@string/app_name"
@@ -26,7 +26,7 @@
         <TextView
             android:id="@+id/web_toolbar_title_text"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/actionbar_height"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:ellipsize="end"
@@ -39,8 +39,8 @@
 
         <ImageButton
             android:id="@+id/web_toolbar_close_btn"
-            android:layout_width="@dimen/actionbar_height"
-            android:layout_height="@dimen/actionbar_height"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:background="?android:attr/actionBarItemBackground"
@@ -51,6 +51,11 @@
             android:visibility="gone"
             tools:visibility="visible" />
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#dddddd" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -65,7 +70,7 @@
             android:id="@+id/web_progressbar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="3dp"
             android:progressDrawable="@drawable/web_progress_bar"
             android:visibility="gone" />
 

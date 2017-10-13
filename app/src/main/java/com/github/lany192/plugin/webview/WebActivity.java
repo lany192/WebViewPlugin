@@ -17,13 +17,13 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.qihoo360.replugin.loader.a.PluginAppCompatActivity;
+import com.qihoo360.replugin.loader.a.PluginActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class WebActivity extends PluginAppCompatActivity {
+public class WebActivity extends PluginActivity {
     private final String TAG = "WebViewPlugin";
     @BindView(R.id.web_toolbar_title_text)
     TextView mTitleText;
@@ -55,14 +55,13 @@ public class WebActivity extends PluginAppCompatActivity {
         mWebView.setWebChromeClient(new MyWebChromeClient());
         mWebView.clearCache(true);
 
-        final WebSettings webSettings = mWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setSavePassword(false);
-        webSettings.setLoadWithOverviewMode(true);// 自动适应手机屏幕
-        webSettings.setUseWideViewPort(true);
-        webSettings.setAppCacheEnabled(true);
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setSavePassword(false);
+        mWebView.getSettings().setLoadWithOverviewMode(true);// 自动适应手机屏幕
+        mWebView.getSettings().setUseWideViewPort(true);
+        mWebView.getSettings().setAppCacheEnabled(true);
         if (Build.VERSION.SDK_INT >= 19) {
-            webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            mWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         }
         if (TextUtils.isEmpty(mTitle)) {
             mTitleText.setText("");
@@ -99,7 +98,7 @@ public class WebActivity extends PluginAppCompatActivity {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Log.i(TAG, "url:" + url);
             view.loadUrl(url);
-            if (mWebView.canGoBack()) {
+            if (mWebView.canGoBack() && mCloseBtn != null) {
                 mCloseBtn.setVisibility(View.VISIBLE);
             }
             return super.shouldOverrideUrlLoading(view, url);
