@@ -7,10 +7,9 @@
     <RelativeLayout
         android:id="@+id/web_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/actionbar_height"
         android:background="@color/toolbar_bg"
-        android:gravity="bottom"
-        android:minHeight="@dimen/actionbar_height">
+        android:gravity="bottom">
 
         <ImageButton
             android:id="@+id/web_toolbar_back_btn"
