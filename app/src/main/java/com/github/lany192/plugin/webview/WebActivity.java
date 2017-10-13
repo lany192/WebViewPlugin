@@ -99,6 +99,9 @@ public class WebActivity extends PluginAppCompatActivity {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Log.i(TAG, "url:" + url);
             view.loadUrl(url);
+            if (mWebView.canGoBack()) {
+                mCloseBtn.setVisibility(View.VISIBLE);
+            }
             return super.shouldOverrideUrlLoading(view, url);
         }
     };
