@@ -12,6 +12,7 @@
 
         <activity
             android:name=".WebActivity"
+            android:exported="true"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
     </application>
 </manifest>
