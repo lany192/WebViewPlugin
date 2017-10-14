@@ -24,7 +24,7 @@ repluginPluginConfig {
 }
 
 dependencies {
-    compile 'com.qihoo360.replugin:replugin-plugin-lib:2.2.0'
+    compile 'com.qihoo360.replugin:replugin-plugin-lib:2.2.1'
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
