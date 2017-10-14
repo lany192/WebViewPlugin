@@ -18,6 +18,18 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    //设置apk出路径和文件名格式,后缀改成jar
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = "WebViewPlugin_${defaultConfig.versionName}.jar"
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -33,7 +45,7 @@ android {
 
 apply plugin: 'replugin-plugin-gradle'
 repluginPluginConfig {
-    pluginName = "WebView"
+    pluginName = "WebViewPlugin"
 }
 
 dependencies {
