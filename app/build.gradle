@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'lany192'
+            keyPassword 'webviewplugin'
+            storeFile file('webviewplugin.jks')
+            storePassword 'webviewplugin'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
     defaultConfig {
@@ -12,8 +20,13 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug.initWith(buildTypes.release)
+        debug {
+
         }
     }
 }
