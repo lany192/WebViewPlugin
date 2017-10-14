@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application>
+
+        <meta-data
+            android:name="com.qihoo360.plugin.name"
+            android:value="WebViewPlugin" />
+
         <activity
             android:name=".WebActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
