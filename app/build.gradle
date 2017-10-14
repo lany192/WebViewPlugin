@@ -48,4 +48,8 @@ dependencies {
     compile 'com.qihoo360.replugin:replugin-plugin-lib:2.2.1'
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //如果要调用宿主app的功能，要将宿主app打包成jar方式用来在插件中使用，用来骗过编译器，不打包到插件中
+    provided files('../providelibs/RepluginHost-1.0.0.jar')
+    provided files('../providelibs/LanyBox-1.5.6.jar')
 }

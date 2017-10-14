@@ -70,6 +70,11 @@ public class WebActivity extends PluginActivity {
         }
         mWebView.setWebViewClient(webViewClient);
         mWebView.loadUrl(mUrl);
+//        if(NetUtils.isNetWorkAvailable()){
+//            ToastUtil.show("有网络");
+//        }else{
+//            ToastUtil.show("无网络");
+//        }
     }
 
     private WebViewClient webViewClient = new WebViewClient() {
